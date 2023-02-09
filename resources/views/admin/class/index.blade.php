@@ -37,7 +37,7 @@
                                         <a href="" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
                                             Edit
                                         </a>
-                                        <a href="" class="bg-red-600 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
+                                        <a href="" class="bg-red-600 rounded text-white px-4 py-2 hover:bg-red-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
                                             Delete
                                         </a>
                                     </td>
