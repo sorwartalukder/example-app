@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\ClassController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// class crud route
+Route::get('class',[ClassController::class, 'index'])->name('class.index');
+
+
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
