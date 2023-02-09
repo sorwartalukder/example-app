@@ -16,5 +16,20 @@ class ClassController extends Controller
        $classes=DB::table('classes')->get();
        return view('admin.class.index', ['classes' => $classes]);
     }
+    public function create(){
+       $classes=DB::table('classes')->get();
+       return view('admin.class.create', ['classes' => $classes]);
+    }
+
+    public function store(Request $request){
+       $request->validate([
+            'class_name'=>'required|unique:classes',
+        ]);
+       $class=array(
+        'class_name'=> $request->class_name,
+       );
+       DB::table('classes')->insert($class);
+       return redirect()->back()->with('success','Added successfully');
+    }
     
 }

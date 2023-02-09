@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 // class crud route
 Route::get('class',[ClassController::class, 'index'])->name('class.index');
+Route::get('create/class',[ClassController::class, 'create'])->name('create.class');
+Route::post('store/class',[ClassController::class, 'store'])->name('store.class');
 
 
 
