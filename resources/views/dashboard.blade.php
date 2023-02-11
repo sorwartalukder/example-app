@@ -21,7 +21,7 @@
                    <a href="{{route('class.index')}}" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
                     class
                    </a>
-                   <a href="" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
+                   <a href="{{route('students.index')}}" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
                     Students
                    </a>
                 </div>

@@ -31,5 +31,23 @@ class ClassController extends Controller
        DB::table('classes')->insert($class);
        return redirect()->back()->with('success','Added successfully');
     }
+    public function delete($id){
+     DB::table('classes')->where('id',$id)->delete();
+     return redirect()->back()->with('success','Delete successfully');
+    }
+    function edit($id){
+        $class = DB::table('classes')->where('id', $id)->first();
+          return view('admin.class.edit', ['class' => $class]);
+    }
+    function update(Request $req, $id){
+        $req->validate([
+            'class_name'=>'required|unique:classes',
+        ]);
+         $class =array(
+            'class_name'=>$req->class_name,
+         );
+         DB::table('classes')->where('id', $id)->update($class);
+         return redirect()->back()->with('success','update successfully');
+    }
     
 }
