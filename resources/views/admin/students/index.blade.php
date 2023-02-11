@@ -58,10 +58,13 @@
                                         >
                                             @csrf
                                             @method('delete')
-                                            <button type='submit' class="bg-red-600 rounded text-white px-4 py-2 hover:bg-red-700 hover:shadow-md hover:shadow-yellow-600 mt-4">
+                                            <button type='submit' class="bg-red-600 rounded text-white px-4 py-2 hover:bg-red-700 hover:shadow-md hover:shadow-yellow-600 my-4">
                                                 Delete
                                             </button>
                                         </form>
+                                        <a href="{{route('students.show',$student->id)}}" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 ">
+                                            show
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
