@@ -60,27 +60,32 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+          $classes=DB::table('classes')->get();
+          $student = DB::table('students')->where('id', $id)->first();
+      return view('admin.students.edit',compact('student','classes'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+      $request->validate([
+        'class_id' => 'required',
+        'name' => 'required',
+        'roll' => 'required',
+        'phone' => 'required',
+    ]);
+      $student=[
+     'class_id' => $request->class_id,
+         'name' => $request->name,
+        'roll' => $request->roll,
+        'phone' => $request->phone,
+    ];
+         DB::table('students')
+            ->where('id', $id)
+            ->update($student);
+         return redirect()->route('students.index')->with('success','update successfully');
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
       DB::table('students')->where('id',$id)->delete();

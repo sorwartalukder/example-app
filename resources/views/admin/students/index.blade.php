@@ -49,7 +49,7 @@
                                         <p>{{$student->class_id}}</p>
                                     </td>
                                     <td class="px-3 py-4">
-                                        <a href="" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
+                                        <a href="{{route('students.edit',$student->id)}}" class="bg-gray-900 rounded text-white px-4 py-2 hover:bg-blue-700 hover:shadow-md hover:shadow-yellow-600 mx-2">
                                             Edit
                                         </a>
                                         <form 
